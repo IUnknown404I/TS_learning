@@ -1,0 +1,100 @@
+@import "service";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-grid {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 18px !important;
+  font-family: Roboto, serif !important;
+
+  .app-navbar {
+    background-color: rgb(49,120,198);
+  }
+
+  .main-container {
+    padding: 1rem 0;
+
+    .input-todo {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      color: steelblue;
+
+      > label {
+        margin-left: .5rem;
+      }
+      > input {
+        padding: .35rem 1rem;
+        font-size: 1rem;
+        outline: unset;
+        border: unset;
+        border-bottom: 2px solid lightblue;
+
+        &:active, &:active, &:focus {
+          border-color: steelblue;
+        }
+      }
+    }
+  }
+}
+
+.todo {
+  margin: 2rem 0;
+  list-style: none;
+
+  > label {
+    max-height: fit-content;
+    padding: 1rem;
+    border: 2px solid lightblue;
+    border-radius: .25rem;
+    background: rgba(lightblue, .05);
+
+    input {
+      cursor: pointer;
+      z-index: 1000;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  > label > div {
+    width: 100%;
+    padding-left: 1.5rem;
+  }
+  > label, > label > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  svg {
+    transition: .3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+.completed {
+  text-decoration: line-through;
+  color: darkgray;
+}
+
+.MuiToolbar-root {
+  .MuiBox-root {
+    gap: 1.5rem;
+
+    > a {
+      color: lightskyblue;
+      text-decoration: none;
+    }
+    a.active {
+      color: white;
+    }
+  }
+}
